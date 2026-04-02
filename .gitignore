@@ -1,0 +1,12 @@
+node_modules/
+dist/
+build/
+.env
+.env.local
+.env.*.local
+.firebase/
+.dart_tool/
+functions/lib/
+*.log
+.DS_Store
+*.tsbuildinfo

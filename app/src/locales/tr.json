@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "items": "Öğeler",
+    "profile": "Profilim",
+    "signIn": "Google ile Giriş Yap",
+    "signOut": "Çıkış Yap",
+    "hello": "Merhaba, {{name}}"
+  },
+  "home": {
+    "title": "Hoş Geldiniz",
+    "subtitle": "React, Data Connect ve daha fazlasıyla bir Firebase Web App şablonu.",
+    "getStarted": "Başla"
+  },
+  "items": {
+    "title": "Öğeler",
+    "create": "Öğe Oluştur",
+    "titleLabel": "Başlık",
+    "descriptionLabel": "Açıklama",
+    "empty": "Henüz öğe yok. Başlamak için bir tane oluşturun!",
+    "delete": "Sil",
+    "confirmDelete": "Emin misiniz?"
+  },
+  "profile": {
+    "title": "Profilim",
+    "username": "Kullanıcı adı",
+    "myItems": "Öğelerim",
+    "favorites": "Favoriler",
+    "loginRequired": "Profilinizi görmek için lütfen giriş yapın."
+  },
+  "notFound": {
+    "title": "404 — Sayfa Bulunamadı",
+    "message": "Aradığınız sayfa mevcut değil.",
+    "goBack": "Geri Dön",
+    "goHome": "Ana Sayfa"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Bir şeyler ters gitti.",
+    "save": "Kaydet",
+    "cancel": "İptal"
+  }
+}

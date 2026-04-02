@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Home",
+    "items": "Items",
+    "profile": "My Profile",
+    "signIn": "Sign In with Google",
+    "signOut": "Sign Out",
+    "hello": "Hello, {{name}}"
+  },
+  "home": {
+    "title": "Welcome",
+    "subtitle": "A Firebase Web App template with React, Data Connect, and more.",
+    "getStarted": "Get Started"
+  },
+  "items": {
+    "title": "Items",
+    "create": "Create Item",
+    "titleLabel": "Title",
+    "descriptionLabel": "Description",
+    "empty": "No items yet. Create one to get started!",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure?"
+  },
+  "profile": {
+    "title": "My Profile",
+    "username": "Username",
+    "myItems": "My Items",
+    "favorites": "Favorites",
+    "loginRequired": "Please sign in to view your profile."
+  },
+  "notFound": {
+    "title": "404 — Page Not Found",
+    "message": "The page you are looking for does not exist.",
+    "goBack": "Go Back",
+    "goHome": "Home"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong.",
+    "save": "Save",
+    "cancel": "Cancel"
+  }
+}

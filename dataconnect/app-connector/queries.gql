@@ -1,0 +1,76 @@
+# List items with optional sorting and limit
+query ListItems($limit: Int) @auth(level: PUBLIC) {
+  items(orderBy: [{ createdAt: DESC }], limit: $limit) {
+    id
+    title
+    description
+    imageUrl
+    status
+    tags
+    createdAt
+    user {
+      id
+      username
+    }
+  }
+}
+
+# Get a single item by ID
+query GetItemById($id: UUID!) @auth(level: PUBLIC) {
+  item(id: $id) {
+    id
+    title
+    description
+    imageUrl
+    status
+    tags
+    createdAt
+    user {
+      id
+      username
+    }
+  }
+}
+
+# Get the currently authenticated user's profile
+query GetCurrentUser @auth(level: USER) {
+  user(key: { id_expr: "auth.uid" }) {
+    id
+    username
+    items_on_user {
+      id
+      title
+      status
+      createdAt
+    }
+    favorite_items_on_user {
+      item {
+        id
+        title
+        description
+        imageUrl
+        status
+        tags
+      }
+    }
+  }
+}
+
+# Check if the current user has favorited an item
+query GetIfFavoritedItem($itemId: UUID!) @auth(level: USER) {
+  favorite_item(key: { userId_expr: "auth.uid", itemId: $itemId }) {
+    itemId
+  }
+}
+
+# Search items by title
+query SearchItems($input: String!) @auth(level: PUBLIC) {
+  items(where: { title: { contains: $input } }) {
+    id
+    title
+    description
+    imageUrl
+    status
+    tags
+  }
+}

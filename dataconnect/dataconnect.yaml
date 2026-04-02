@@ -1,0 +1,11 @@
+specVersion: "v1alpha"
+serviceId: "my-firebase-app"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "my-firebase-app"
+      cloudSql:
+        instanceId: "my-firebase-app"
+connectorDirs: ["./app-connector"]

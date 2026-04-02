@@ -1,0 +1,63 @@
+# Create or update user on authentication
+mutation UpsertUser($username: String!) @auth(level: USER) {
+  user_upsert(
+    data: {
+      id_expr: "auth.uid"
+      username: $username
+    }
+  )
+}
+
+# Create a new item
+mutation CreateItem(
+  $title: String!
+  $description: String
+  $imageUrl: String
+  $tags: [String!] = []
+) @auth(level: USER) {
+  item_insert(
+    data: {
+      title: $title
+      description: $description
+      imageUrl: $imageUrl
+      tags: $tags
+      userId_expr: "auth.uid"
+    }
+  )
+}
+
+# Update an existing item
+mutation UpdateItem(
+  $id: UUID!
+  $title: String
+  $description: String
+  $imageUrl: String
+  $status: String
+  $tags: [String!] = []
+) @auth(level: USER) {
+  item_update(
+    id: $id
+    data: {
+      title: $title
+      description: $description
+      imageUrl: $imageUrl
+      status: $status
+      tags: $tags
+    }
+  )
+}
+
+# Delete an item
+mutation DeleteItem($id: UUID!) @auth(level: USER) {
+  item_delete(id: $id)
+}
+
+# Add an item to favorites
+mutation AddFavoriteItem($itemId: UUID!) @auth(level: USER) {
+  favorite_item_upsert(data: { userId_expr: "auth.uid", itemId: $itemId })
+}
+
+# Remove an item from favorites
+mutation RemoveFavoriteItem($itemId: UUID!) @auth(level: USER) {
+  favorite_item_delete(key: { userId_expr: "auth.uid", itemId: $itemId })
+}

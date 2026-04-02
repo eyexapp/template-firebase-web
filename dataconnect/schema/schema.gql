@@ -1,0 +1,24 @@
+# User — maps to Firebase Auth UID
+type User @table {
+  id: String! @col(name: "user_auth")
+  username: String! @col(name: "username", dataType: "varchar(50)")
+}
+
+# Item — generic entity owned by a user
+type Item @table {
+  id: UUID! @default(expr: "uuidV4()")
+  title: String!
+  description: String
+  imageUrl: String
+  status: String @default(value: "active")
+  tags: [String]
+  createdAt: Timestamp! @default(expr: "request.time")
+  user: User!
+}
+
+# FavoriteItem — many-to-many between User and Item
+type FavoriteItem
+  @table(name: "FavoriteItems", singular: "favorite_item", plural: "favorite_items", key: ["user", "item"]) {
+  user: User!
+  item: Item!
+}

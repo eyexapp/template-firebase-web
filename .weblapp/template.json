@@ -1,0 +1,34 @@
+{
+  "name": "firebase-web",
+  "displayName": "Firebase Web",
+  "description": "React 19 + Firebase template with Vite, Data Connect SDK, Zustand, Tailwind CSS 4, and react-i18next",
+  "category": "fullstack",
+  "language": "typescript",
+  "framework": "react",
+  "stack": ["react", "firebase", "vite", "tailwindcss", "zustand", "react-i18next", "playwright"],
+  "features": ["firebase-auth", "data-connect", "i18n", "dark-mode", "e2e-testing"],
+  "commands": {
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "test": "npm run test",
+    "lint": "npm run lint"
+  },
+  "packageManager": "npm",
+  "ci": {
+    "workflowTemplate": "firebase-web",
+    "runner": "ubuntu-latest",
+    "runtime": {
+      "name": "node",
+      "version": "20",
+      "setup": "actions/setup-node@v4",
+      "cache": "npm"
+    },
+    "services": {},
+    "steps": {
+      "install": "npm ci",
+      "build": "npm run build",
+      "test": "npm run test",
+      "lint": "npm run lint"
+    }
+  }
+}
